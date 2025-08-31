@@ -1,12 +1,253 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { LeadCaptureModal } from "@/components/LeadCaptureModal";
+import { SizeConfiguratorSection } from "@/components/SizeConfiguratorSection";
+import { CheckCircle, Truck, Settings, Shield, Star, Users, Award } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-primary text-white py-20 px-4">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Mattresses That Fit Your Life.<br />
+            Any Size. Any Space. Delivered.
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
+            Stop settling for 'standard' sizes. Get a mattress built for your exact dimensions—RV, loft, guest room, or dream bed.
+          </p>
+          
+          {/* Visual Split Screen */}
+          <div className="grid md:grid-cols-2 gap-8 my-12 max-w-4xl mx-auto">
+            <Card className="p-6 bg-white/10 border-white/20">
+              <div className="text-center">
+                <div className="text-4xl mb-4">😫</div>
+                <h3 className="font-semibold mb-2">Standard Mattress Problems</h3>
+                <p className="text-sm text-white/80">Cramped spaces, awkward fits, wasted corners</p>
+              </div>
+            </Card>
+            <Card className="p-6 bg-white/10 border-white/20">
+              <div className="text-center">
+                <div className="text-4xl mb-4">✨</div>
+                <h3 className="font-semibold mb-2">Perfect Custom Fit</h3>
+                <p className="text-sm text-white/80">Exact dimensions, perfect comfort, maximum space</p>
+              </div>
+            </Card>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <LeadCaptureModal>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-black font-semibold px-8">
+                Design Yours Now
+              </Button>
+            </LeadCaptureModal>
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+              Get a Free Size Quote
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Capture Section */}
+      <section className="py-16 bg-brand-light">
+        <div className="container mx-auto px-4">
+          <div className="max-w-md mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-8">Get Your Custom Quote in 60 Seconds</h2>
+            <LeadCaptureModal variant="inline">
+              <div />
+            </LeadCaptureModal>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Custom Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Why Choose Custom?
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <Card className="text-center p-6 shadow-elegant hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-destructive rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl">🚫</span>
+              </div>
+              <h3 className="font-semibold mb-2">Standard Sizes Don't Work</h3>
+              <p className="text-sm text-muted-foreground">Most spaces aren't built for standard mattress sizes</p>
+            </Card>
+            
+            <Card className="text-center p-6 shadow-elegant hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Settings className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">Custom-Built to Your Specs</h3>
+              <p className="text-sm text-muted-foreground">Precise measurements for your exact space</p>
+            </Card>
+            
+            <Card className="text-center p-6 shadow-elegant hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <Truck className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">Fast Delivery Anywhere</h3>
+              <p className="text-sm text-muted-foreground">Direct to your RV, boat, or unique space</p>
+            </Card>
+            
+            <Card className="text-center p-6 shadow-elegant hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-primary text-2xl">😴</span>
+              </div>
+              <h3 className="font-semibold mb-2">Better Fit = Better Sleep</h3>
+              <p className="text-sm text-muted-foreground">Optimal comfort in your space</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-16 bg-brand-light">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4">Over 5,000 Custom Mattresses Made</Badge>
+            <h2 className="text-3xl font-bold mb-8">Trusted by Happy Sleepers</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <Card className="p-6">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="mb-4 text-sm">
+                "Finally, a mattress that fits our RV perfectly! No more weird gaps or hanging over the edges."
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-semibold">M</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Mike & Sarah</p>
+                  <p className="text-xs text-muted-foreground">RV Travelers</p>
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-6">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="mb-4 text-sm">
+                "Our tiny house loft needed a very specific size. This mattress fits like it was made for us—because it was!"
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-semibold">J</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Jessica Chen</p>
+                  <p className="text-xs text-muted-foreground">Tiny Home Owner</p>
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-6">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="mb-4 text-sm">
+                "Great quality and exactly the dimensions we needed for our boat cabin. Delivery was super fast too!"
+              </p>
+              <div className="flex items-center">
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-semibold">R</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Robert Kim</p>
+                  <p className="text-xs text-muted-foreground">Boat Owner</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <div className="flex justify-center items-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                <span>5,000+ Happy Customers</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-4 h-4" />
+                <span>98% Satisfaction Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Configurator */}
+      <SizeConfiguratorSection />
+
+      {/* Trust & Urgency Section */}
+      <section className="py-16 bg-gradient-subtle">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8">Sleep Better in 7 Days—Or Your Money Back</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto mb-8">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">10-Year Warranty</h3>
+              <p className="text-sm text-muted-foreground">Full coverage on materials and craftsmanship</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4">
+                <CheckCircle className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">100-Night Trial</h3>
+              <p className="text-sm text-muted-foreground">Try it risk-free in your own space</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4">
+                <Truck className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">Free Returns</h3>
+              <p className="text-sm text-muted-foreground">We'll pick it up if you're not satisfied</p>
+            </div>
+          </div>
+          
+          <div className="flex justify-center gap-4 text-sm text-muted-foreground">
+            <Badge variant="outline">Secure Checkout</Badge>
+            <Badge variant="outline">SSL Encrypted</Badge>
+            <Badge variant="outline">BBB Accredited</Badge>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Banner */}
+      <section className="bg-primary text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Your Bed. Your Rules. Your Size. 👉
+          </h2>
+          <p className="text-xl mb-8 text-white/90">
+            Start Your Custom Mattress Quote Today
+          </p>
+          <LeadCaptureModal>
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-black font-semibold px-12 py-4 text-lg">
+              Get Started Free
+            </Button>
+          </LeadCaptureModal>
+        </div>
+      </section>
     </div>
   );
 };
