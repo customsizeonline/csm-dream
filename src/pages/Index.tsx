@@ -8,42 +8,53 @@ import { CheckCircle, Truck, Settings, Shield, Star, Users, Award } from "lucide
 const Index = () => {
   return (
     <div className="min-h-screen">
+      {/* Logo Section */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <img 
+            src="/lovable-uploads/446f8183-2dc9-4c18-be26-c150e4fd80af.png" 
+            alt="Custom Size Mattress Logo" 
+            className="mx-auto h-32 w-auto"
+          />
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="bg-gradient-primary text-white py-20 px-4">
+      <section className="bg-white text-foreground py-20 px-4 border-b">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-primary">
             Mattresses That Fit Your Life.<br />
             Any Size. Any Space. Delivered.
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-3xl mx-auto">
             Stop settling for 'standard' sizes. Get a mattress built for your exact dimensions—RV, loft, guest room, or dream bed.
           </p>
           
           {/* Visual Split Screen */}
           <div className="grid md:grid-cols-2 gap-8 my-12 max-w-4xl mx-auto">
-            <Card className="p-6 bg-white/10 border-white/20">
+            <Card className="p-6 bg-destructive/10 border-destructive/20">
               <div className="text-center">
                 <div className="text-4xl mb-4">😫</div>
-                <h3 className="font-semibold mb-2">Standard Mattress Problems</h3>
-                <p className="text-sm text-white/80">Cramped spaces, awkward fits, wasted corners</p>
+                <h3 className="font-semibold mb-2 text-foreground">Standard Mattress Problems</h3>
+                <p className="text-sm text-muted-foreground">Cramped spaces, awkward fits, wasted corners</p>
               </div>
             </Card>
-            <Card className="p-6 bg-white/10 border-white/20">
+            <Card className="p-6 bg-accent/10 border-accent/20">
               <div className="text-center">
                 <div className="text-4xl mb-4">✨</div>
-                <h3 className="font-semibold mb-2">Perfect Custom Fit</h3>
-                <p className="text-sm text-white/80">Exact dimensions, perfect comfort, maximum space</p>
+                <h3 className="font-semibold mb-2 text-foreground">Perfect Custom Fit</h3>
+                <p className="text-sm text-muted-foreground">Exact dimensions, perfect comfort, maximum space</p>
               </div>
             </Card>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <LeadCaptureModal>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-black font-semibold px-8">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8">
                 Design Yours Now
               </Button>
             </LeadCaptureModal>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               Get a Free Size Quote
             </Button>
           </div>
