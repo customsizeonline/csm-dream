@@ -14,7 +14,7 @@ const Index = () => {
           <img 
             src="/lovable-uploads/446f8183-2dc9-4c18-be26-c150e4fd80af.png" 
             alt="Custom Size Mattress Logo" 
-            className="mx-auto h-32 w-auto"
+            className="mx-auto h-64 w-auto"
           />
         </div>
       </section>
